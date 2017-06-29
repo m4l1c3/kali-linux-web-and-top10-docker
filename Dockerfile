@@ -8,4 +8,5 @@ RUN apt-get update && \
     mkdir insecure_original_default_kali_keys && \
     mv ssh_host_* insecure_original_default_kali_keys/ && \
     dpkg-reconfigure openssh-server && \
-    apt-get install kali-linux-web -y
+    apt-get install kali-linux-web -y \
+    gzip -d /usr/share/wordlists/rockyou.txt.gz
