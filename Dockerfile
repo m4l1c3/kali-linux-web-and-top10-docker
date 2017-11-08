@@ -15,4 +15,7 @@ RUN apt-get update && \
     mkdir /root/.config && \
     curl -sLf https://spacevim.org/install.sh | bash && \
     git clone https://github.com/HackerFantastic/Public.git && \
-    msfdb init
+    service postgresql start && \
+    service metasploit start && \
+    msfdb init && \
+    msfconsole -x db_rebuild_cache
